@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -72,8 +74,26 @@ dependencies {
     implementation ("com.google.accompanist:accompanist-pager:0.25.0")
 
     implementation("androidx.navigation:navigation-compose:2.7.6")
+
+    implementation ("androidx.work:work-runtime-ktx:2.9.0")
+
+    //firebase
+    implementation("com.google.firebase:firebase-firestore:24.10.1")
+    implementation("com.google.firebase:firebase-analytics:21.5.0")
+    implementation("com.google.firebase:firebase-crashlytics:18.6.1")
+    implementation("com.google.firebase:firebase-messaging:23.4.0")
+
+    //dagger hilt
     implementation("com.google.dagger:hilt-android:2.48.1")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
+    kapt("androidx.hilt:hilt-compiler:1.1.0")
+
+    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+    //kotlin coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
 }
 kapt {

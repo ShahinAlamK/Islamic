@@ -14,7 +14,10 @@ import com.example.islamic.navigations.Routes
 import com.example.islamic.presentation.SettingsViewModel
 import com.example.islamic.presentation.ViewModelData
 import com.example.islamic.ui.theme.IslamicTheme
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val viewModelData : ViewModelData by viewModels()
 
