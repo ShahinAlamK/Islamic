@@ -6,6 +6,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -17,20 +18,18 @@ import com.example.islamic.screens.HomeScreen
 import com.example.islamic.screens.ItemScreen
 
 @Composable
-fun Routes(viewModelData: ViewModelData) {
+fun Routes(viewModelData: ViewModelData,navHostController:NavHostController) {
 
-    val navHostController = rememberNavController()
     val sharedViewModel:SharedViewModel = viewModel()
-    val settingsViewModel:SettingsViewModel = viewModel()
 
-    NavHost(navController = navHostController, startDestination = home){
-        composable(home){ HomeScreen(
+    NavHost(navController = navHostController, startDestination = NavigateString.HomeRoute.route){
+        composable(NavigateString.HomeRoute.route){ HomeScreen(
             viewModelData=viewModelData,
             navController = navHostController,
             sharedViewModel = sharedViewModel
         ) }
         composable(
-            details,
+            NavigateString.DetailRoute.route,
             enterTransition = {
                 fadeIn(tween(delayMillis = 200))+slideIntoContainer(
                     AnimatedContentTransitionScope.SlideDirection.Left,tween(delayMillis = 200)
@@ -55,7 +54,7 @@ fun Routes(viewModelData: ViewModelData) {
         ){ DetailScreen(sharedViewModel = sharedViewModel, navController = navHostController)}
 
         composable(
-            itemScreen,
+            NavigateString.ItemRoute.route,
             enterTransition = {
                 fadeIn(tween(delayMillis = 200))+slideIntoContainer(
                     AnimatedContentTransitionScope.SlideDirection.Left,tween(delayMillis = 200)
@@ -81,7 +80,3 @@ fun Routes(viewModelData: ViewModelData) {
     }
 
 }
-
-const val home = "HomeScreen"
-const val itemScreen = "ItemScreen"
-const val details = "DetailsScreen"

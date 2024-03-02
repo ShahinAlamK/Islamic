@@ -10,9 +10,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.ArrowForward
 import androidx.compose.material.icons.outlined.ExitToApp
 import androidx.compose.material.icons.outlined.Info
+import androidx.compose.material.icons.outlined.Refresh
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.Divider
@@ -32,13 +34,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.islamic.data.view.IslamicViewModel
 import kotlinx.coroutines.launch
 
 @Composable
-fun DrawerComponent(drawerState: DrawerState) {
+fun DrawerComponent(drawerState: DrawerState,viewModel: IslamicViewModel = hiltViewModel()) {
     val scope = rememberCoroutineScope()
-    val isExit = remember { mutableStateOf(false) }
-    ExitDialog(isOpenDialog = isExit)
 
     ModalDrawerSheet(
         drawerShape = RoundedCornerShape(0.dp),
@@ -54,9 +56,12 @@ fun DrawerComponent(drawerState: DrawerState) {
                 .fillMaxWidth()
                 .background(MaterialTheme.colorScheme.background),
             contentAlignment = Alignment.Center
-        ) { }
+        ) {
+            Text(text = "প্রয়োজনীয় আয়াত ও সূরাহ", style = MaterialTheme.typography.titleLarge)
+        }
 
         Divider(
+            thickness = 1.dp,
             color = MaterialTheme.colorScheme.onSecondary,
             modifier = Modifier.padding(bottom = 10.dp)
         )
@@ -65,6 +70,46 @@ fun DrawerComponent(drawerState: DrawerState) {
             modifier = Modifier.fillMaxSize(),
         ) {
             item {
+
+                NavigationDrawerItem(
+                    colors = NavigationDrawerItemDefaults.colors(
+                        unselectedContainerColor = Color.Transparent
+                    ),
+                    shape = RoundedCornerShape(0.dp),
+                    icon = { Icon(imageVector = Icons.Outlined.Refresh, contentDescription = "") },
+                    label = { Text(text = "Update") },
+                    badge = {
+                        Icon(
+                            imageVector = Icons.Outlined.ArrowForward,
+                            contentDescription = ""
+                        )
+                    },
+                    selected = false,
+                    onClick = {
+                        scope.launch {
+                            viewModel.fetchAllIslamic()
+                        }
+                    }
+                )
+
+                NavigationDrawerItem(
+                    colors = NavigationDrawerItemDefaults.colors(
+                        unselectedContainerColor = Color.Transparent
+                    ),
+                    shape = RoundedCornerShape(0.dp),
+                    icon = { Icon(imageVector = Icons.Outlined.Add, contentDescription = "") },
+                    label = { Text(text = "New Post") },
+                    badge = {
+                        Icon(
+                            imageVector = Icons.Outlined.ArrowForward,
+                            contentDescription = ""
+                        )
+                    },
+                    selected = false,
+                    onClick = {
+
+                    }
+                )
 
                 NavigationDrawerItem(
                     colors = NavigationDrawerItemDefaults.colors(

@@ -15,4 +15,5 @@ object AppModule {
     @Provides
     @Singleton
     fun providesFirebase(): FirebaseFirestore = Firebase.firestore
+
 }

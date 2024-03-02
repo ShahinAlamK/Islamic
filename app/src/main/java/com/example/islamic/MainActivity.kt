@@ -10,6 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.rememberNavController
 import com.example.islamic.navigations.Routes
 import com.example.islamic.presentation.SettingsViewModel
 import com.example.islamic.presentation.ViewModelData
@@ -21,7 +22,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private val viewModelData : ViewModelData by viewModels()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -32,6 +32,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Routes(
                         viewModelData = viewModelData,
+                        navHostController = rememberNavController()
                     )
                 }
             }

@@ -18,12 +18,7 @@ class IslamicRepo @Inject constructor(private val db: FirebaseFirestore) : Islam
             trySend(AppResponse.Loading)
             db.collection("message").get()
                 .addOnSuccessListener { snapshot ->
-                    val data = snapshot.map { item ->
-                        ItemModel(
-                            title = item["title"] as String,
-                            items = item["items"] as ArrayList<IbadatModel>
-                        )
-                    }
+                    val data = snapshot.toObjects(ItemModel::class.java)
                     trySend(AppResponse.Success(data))
                 }.addOnFailureListener {
                     trySend(AppResponse.Failure(it))

@@ -23,8 +23,7 @@ import androidx.navigation.NavController
 import com.example.islamic.components.CustomCard
 import com.example.islamic.components.ErrorComponent
 import com.example.islamic.components.RoundComponent
-import com.example.islamic.navigations.details
-import com.example.islamic.navigations.itemScreen
+import com.example.islamic.navigations.NavigateString
 import com.example.islamic.presentation.SharedViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -71,7 +70,7 @@ fun ItemScreen(sharedViewModel: SharedViewModel,navController: NavController) {
                             index = it,
                             title = data.items[it].title,
                             click = {
-                                navController.navigate(details)
+                                navController.navigate(NavigateString.DetailRoute.route)
                                 sharedViewModel.setDetailData(data.items[it])
                             }
                         )
