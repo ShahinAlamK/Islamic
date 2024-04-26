@@ -16,6 +16,9 @@ val banglaFont = FontFamily(
 val arbicFont = FontFamily(
     Font(R.font.lateef)
 )
+val roboto = FontFamily(
+    Font(R.font.roboto, weight = FontWeight.Normal)
+)
 
 val Typography = Typography(
     titleLarge = TextStyle(
@@ -33,6 +36,12 @@ val Typography = Typography(
         fontFamily = banglaFont,
         fontWeight = FontWeight.Normal,
         fontSize = 18.sp,
-    )
+    ),
+
+    labelMedium = TextStyle(
+        fontFamily = roboto,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+    ),
 
 )

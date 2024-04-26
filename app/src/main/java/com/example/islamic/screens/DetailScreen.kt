@@ -4,9 +4,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.outlined.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.Divider
@@ -33,13 +35,18 @@ fun DetailScreen(sharedViewModel: SharedViewModel,navController: NavController) 
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.background),
+                colors = TopAppBarDefaults.topAppBarColors(
+                    titleContentColor =MaterialTheme.colorScheme.onBackground,
+                    navigationIconContentColor = MaterialTheme.colorScheme.onBackground,
+                    actionIconContentColor = MaterialTheme.colorScheme.onBackground,
+                    containerColor = MaterialTheme.colorScheme.primary
+                ),
                 navigationIcon = {
-                    RoundComponent(modifier = Modifier.padding(10.dp)) {
-                        IconButton(
-                            onClick = {navController.popBackStack()}) {
-                            Icon(imageVector = Icons.Outlined.ArrowBack, contentDescription = "")
-                        }
+
+                    IconButton(
+                        onClick = { navController.popBackStack()}
+                    ) {
+                        Icon(imageVector = Icons.Filled.ArrowBack, contentDescription = "")
                     }
                 },
                 title = { Text(text = model?.title!!) })
