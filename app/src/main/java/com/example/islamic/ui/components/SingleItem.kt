@@ -1,4 +1,4 @@
-package com.example.islamic.components
+package com.example.islamic.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer

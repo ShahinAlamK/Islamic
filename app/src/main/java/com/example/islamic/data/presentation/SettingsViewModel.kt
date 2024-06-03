@@ -1,4 +1,4 @@
-package com.example.islamic.presentation
+package com.example.islamic.data.presentation
 
 import android.util.Log
 import androidx.compose.runtime.getValue

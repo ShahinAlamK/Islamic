@@ -1,4 +1,4 @@
-package com.example.islamic.screens
+package com.example.islamic.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -19,15 +19,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.islamic.presentation.ViewModelData
-import com.example.islamic.components.AppbarComponents
-import com.example.islamic.components.CustomCard
-import com.example.islamic.components.DrawerComponent
-import com.example.islamic.components.ErrorComponent
-import com.example.islamic.components.LoadingComponent
+import com.example.islamic.data.presentation.ViewModelData
+import com.example.islamic.ui.components.AppbarComponents
+import com.example.islamic.ui.components.CustomCard
+import com.example.islamic.ui.components.DrawerComponent
+import com.example.islamic.ui.components.ErrorComponent
+import com.example.islamic.ui.components.LoadingComponent
 import com.example.islamic.data.view.IslamicViewModel
 import com.example.islamic.navigations.NavigateString
-import com.example.islamic.presentation.SharedViewModel
+import com.example.islamic.data.presentation.SharedViewModel
 
 @Composable
 fun HomeScreen(

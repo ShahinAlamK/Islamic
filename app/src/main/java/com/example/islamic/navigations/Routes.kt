@@ -10,17 +10,17 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.islamic.presentation.SettingsViewModel
-import com.example.islamic.presentation.SharedViewModel
-import com.example.islamic.presentation.ViewModelData
-import com.example.islamic.screens.DetailScreen
-import com.example.islamic.screens.HomeScreen
-import com.example.islamic.screens.ItemScreen
+import com.example.islamic.data.presentation.SettingsViewModel
+import com.example.islamic.data.presentation.SharedViewModel
+import com.example.islamic.data.presentation.ViewModelData
+import com.example.islamic.ui.screens.DetailScreen
+import com.example.islamic.ui.screens.HomeScreen
+import com.example.islamic.ui.screens.ItemScreen
 
 @Composable
-fun Routes(viewModelData: ViewModelData,navHostController:NavHostController) {
+fun Routes(viewModelData: ViewModelData, navHostController:NavHostController) {
 
-    val sharedViewModel:SharedViewModel = viewModel()
+    val sharedViewModel: SharedViewModel = viewModel()
 
     NavHost(navController = navHostController, startDestination = NavigateString.HomeRoute.route){
         composable(NavigateString.HomeRoute.route){ HomeScreen(
@@ -51,7 +51,7 @@ fun Routes(viewModelData: ViewModelData,navHostController:NavHostController) {
                 )
             },
 
-        ){ DetailScreen(sharedViewModel = sharedViewModel, navController = navHostController)}
+        ){ DetailScreen(sharedViewModel = sharedViewModel, navController = navHostController) }
 
         composable(
             NavigateString.ItemRoute.route,

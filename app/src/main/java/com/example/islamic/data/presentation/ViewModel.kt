@@ -1,4 +1,4 @@
-package com.example.islamic.presentation
+package com.example.islamic.data.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

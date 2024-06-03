@@ -1,4 +1,4 @@
-package com.example.islamic.components
+package com.example.islamic.ui.components
 
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
@@ -29,7 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.islamic.R
-import com.example.islamic.presentation.SettingsViewModel
+import com.example.islamic.data.presentation.SettingsViewModel
 import com.example.islamic.ui.theme.OnPrimary
 import kotlinx.coroutines.launch
 

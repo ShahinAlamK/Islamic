@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.islamic.navigations.Routes
-import com.example.islamic.presentation.SettingsViewModel
-import com.example.islamic.presentation.ViewModelData
+import com.example.islamic.data.presentation.SettingsViewModel
+import com.example.islamic.data.presentation.ViewModelData
 import com.example.islamic.ui.theme.IslamicTheme
 import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint

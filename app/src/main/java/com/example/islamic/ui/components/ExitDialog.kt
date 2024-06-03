@@ -1,4 +1,4 @@
-package com.example.islamic.components
+package com.example.islamic.ui.components
 
 import android.widget.Toast
 import androidx.activity.compose.BackHandler

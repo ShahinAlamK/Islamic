@@ -1,4 +1,4 @@
-package com.example.islamic.screens
+package com.example.islamic.ui.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
@@ -20,15 +20,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.islamic.components.CustomCard
-import com.example.islamic.components.ErrorComponent
-import com.example.islamic.components.RoundComponent
+import com.example.islamic.ui.components.CustomCard
+import com.example.islamic.ui.components.ErrorComponent
+import com.example.islamic.ui.components.RoundComponent
 import com.example.islamic.navigations.NavigateString
-import com.example.islamic.presentation.SharedViewModel
+import com.example.islamic.data.presentation.SharedViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ItemScreen(sharedViewModel: SharedViewModel,navController: NavController) {
+fun ItemScreen(sharedViewModel: SharedViewModel, navController: NavController) {
     val data = sharedViewModel.sharedData
 
     Scaffold(

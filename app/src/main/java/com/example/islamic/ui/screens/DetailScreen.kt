@@ -1,4 +1,4 @@
-package com.example.islamic.screens
+package com.example.islamic.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer
@@ -23,12 +23,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.islamic.components.RoundComponent
-import com.example.islamic.presentation.SharedViewModel
+import com.example.islamic.ui.components.RoundComponent
+import com.example.islamic.data.presentation.SharedViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailScreen(sharedViewModel: SharedViewModel,navController: NavController) {
+fun DetailScreen(sharedViewModel: SharedViewModel, navController: NavController) {
     val model = sharedViewModel.getDetailsData
     Scaffold(
         topBar = {

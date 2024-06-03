@@ -1,4 +1,4 @@
-package com.example.islamic.presentation
+package com.example.islamic.data.presentation
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
